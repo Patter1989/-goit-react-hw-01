@@ -10,7 +10,7 @@ import transactions from "./backend-data/transactions.json"
 const App = () => {
 	return (
 		<>
-			<section>
+			<Section>
 				<Profile
 					name={userData.username}
 					tag={userData.tag}
@@ -18,13 +18,13 @@ const App = () => {
 					image={userData.avatar}
 					stats={userData.stats}
 				/>
-			</section>
-			<section>
+			</Section>
+			<Section>
 				<FriendList friends={friends} />
-			</section>
-			<section>
+			</Section>
+			<Section>
 				<TransactionHistory items={transactions} />
-			</section>
+			</Section>
 		</>
 	);
 };
