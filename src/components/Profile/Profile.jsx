@@ -14,18 +14,15 @@ const Profile = ({ name, tag, location, image, stats }) => {
 			</div>
 
 			<ul className={css.socialList}>
-				<li className={css.socialInfo}>
-					<span className={css.socialName}>{Object.keys(stats)[0]}</span>
-					<span className={css.socialNumber}>{stats.Followers}</span>
-				</li>
-				<li className={css.socialInfo}>
-					<span className={css.socialName}>{Object.keys(stats)[1]}</span>
-					<span className={css.socialNumber}>{stats.Views}</span>
-				</li>
-				<li className={css.socialInfo}>
-					<span className={css.socialName}>{Object.keys(stats)[2]}</span>
-					<span className={css.socialNumber}>{stats.Likes}</span>
-				</li>
+				{Object.keys(stats).map((key) => (
+					<li
+						key={key}
+						className={css.socialInfo}
+					>
+						<span className={css.socialName}>{key}</span>
+						<span className={css.socialNumber}>{stats[key]}</span>
+					</li>
+				))}
 			</ul>
 		</div>
 	);
